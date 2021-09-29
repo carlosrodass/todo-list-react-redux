@@ -10,7 +10,6 @@ export const add_todo_task_action = task => {
     }
 }
 
-
 export const delete_todo_task_action = task_id => {
     return {
         type: DELETE_TODO_TASK,

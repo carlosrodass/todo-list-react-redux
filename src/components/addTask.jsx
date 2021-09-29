@@ -16,7 +16,6 @@ const AddTask = () => {
                 completed: false
             }
             dispatch(add_todo_task_action(newTask));
-            
         }
     }
     return (

@@ -9,7 +9,7 @@ const TaskList = () => {
     return (
         <>
             <ul>
-                {todos.length >= 1 &&
+                {todos && todos.length >= 1 &&
 
                     todos.map((todo) => {
 
@@ -19,15 +19,15 @@ const TaskList = () => {
                                 <span>
                                     {todo.title}
                                 </span>
-                                <button onClick={() => {dispatch(delete_todo_task_action(todo.id))}}>
+                                <button onClick={() => { dispatch(delete_todo_task_action(todo.id)) }}>
                                     Delete
                                 </button>
                             </li>
                         )
-                    })}
+                })}
             </ul>
 
-            <button className="clearAll" onClick={() => {dispatch(delete_all_todo_task_action())}}>
+            <button className="clearAll" onClick={() => { dispatch(delete_all_todo_task_action()) }}>
                 Clear all
             </button>
         </>
