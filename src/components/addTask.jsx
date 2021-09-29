@@ -18,9 +18,7 @@ const AddTask = () => {
             dispatch(add_todo_task_action(newTask));
             
         }
-
     }
-
     return (
         <>
             <input type="text"

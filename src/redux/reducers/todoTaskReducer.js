@@ -18,7 +18,7 @@ const todo_task = (state = default_task_state, action) => {
 
         case DELETE_TODO_TASK: {
 
-            const deleting = state.task.filter((ele) => ele.id !== action.payload)
+            const deleting = state.task.filter((ele) => ele.id !== action.payload);
 
             return {
                 ...state,
@@ -27,16 +27,22 @@ const todo_task = (state = default_task_state, action) => {
         }
 
         case DELETE_ALL_TODO_TASK: {
- 
+
             return {
                 ...state,
-                task:[]
+                task: []
             }
         }
 
         case COMPLETE_TODO_TASK: {
+
+            const element = state.task.filter((ele) => ele.id === action.payload);
+
+            if (element.length > 0) element[0].completed ? element[0].completed = false : element[0].completed = true;
+
             return {
                 ...state,
+                task: [...state.task]
             }
         }
 

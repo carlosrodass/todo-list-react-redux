@@ -24,9 +24,9 @@ export const delete_all_todo_task_action = ()=> {
     }
 }
 
-export const complete_todo_task_action = task =>{
+export const complete_todo_task_action = task_id =>{
     return{
         type: COMPLETE_TODO_TASK,
-        payload: task,
+        payload: task_id,
     }
 }
